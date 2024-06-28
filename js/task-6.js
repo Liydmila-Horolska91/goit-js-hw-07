@@ -5,97 +5,50 @@ function getRandomHexColor() {
 }
 
 
-// const input = document.querySelector("#boxCountInput");
-// const createButton = document.querySelector("#controls button[data-create]");
-// const destroyButton = document.querySelector("#controls button[data-destroy]");
-// const boxesContainer = document.getElementById("boxes");
+const input = document.querySelector("#boxCountInput");
+const createButton = document.querySelector("#controls button[data-create]");
+const destroyButton = document.querySelector("#controls button[data-destroy]");
+const boxesContainer = document.getElementById("boxes");
 
 
 
-// createButton.addEventListener("click", () => {
-//   const amount = parseInt(input.value);
+createButton.addEventListener("click", () => {
+  const amount = parseInt(input.value);
 
-//   if (amount >= 1 && amount <= 100) {
-//     createBoxes(amount);
-//     input.value = "";
-//   } else {
-//     alert("Please enter a number between 1 and 100.");
-//   }
-// });
-
-
-
-// destroyButton.addEventListener("click", () => {
-//   destroyBoxes();
-// });
-
-// function createBoxes(amount) {
-//   boxesContainer.innerHTML = "";
-//   const fragment = document.createDocumentFragment();
-
-//   let size = 30;
-
-//   for (let i = 0; i < amount; i++) {
-//     const box = document.createElement("div");
-//     box.classList.add("box");
-//     box.style.width = `${size}px`;
-//     box.style.height = `${size}px`;
-//     box.style.backgroundColor = getRandomHexColor();
-//     fragment.appendChild(box);
-//     size += 10;
-//   }
-
-//   boxesContainer.appendChild(fragment);
-// }
-
-
-// function destroyBoxes() {
-//   boxesContainer.innerHTML = "";
-// }
+  if (amount >= 1 && amount <= 100) {
+    createBoxes(amount);
+    input.value = "";
+  } else {
+    alert("Please enter a number between 1 and 100.");
+  }
+});
 
 
 
-    // Отримуємо елементи DOM
-    const controls = document.querySelector('#controls');
-    const input = controls.querySelector('input');
-    const createButton = controls.querySelector('[data-create]');
-    const destroyButton = controls.querySelector('[data-destroy]');
-    const boxesContainer = document.querySelector('#boxes');
+destroyButton.addEventListener("click", () => {
+  destroyBoxes();
+});
 
-    // Функція для створення колекції елементів
-    function createBoxes(amount) {
-      const fragment = document.createDocumentFragment();
-      let size = 30;
+function createBoxes(amount) {
+  boxesContainer.innerHTML = ""; 
+  const fragment = document.createDocumentFragment(); 
 
-      for (let i = 0; i < amount; i++) {
-        const box = document.createElement('div');
-        box.style.width = `${size}px`;
-        box.style.height = `${size}px`;
-        box.style.backgroundColor = getRandomHexColor();
-        fragment.appendChild(box);
-        size += 10;
-      }
+  let size = 30; 
 
-      boxesContainer.innerHTML = '';
-      boxesContainer.appendChild(fragment);
-    }
+  for (let i = 0; i < amount; i++) {
+    const box = document.createElement("div"); 
+    box.classList.add("box"); 
+    box.style.width = `${size}px`; 
+    box.style.height = `${size}px`; 
+    box.style.backgroundColor = getRandomHexColor(); 
+    fragment.appendChild(box); 
+    size += 10; 
+  }
 
-    // Функція для видалення колекції елементів
-    function destroyBoxes() {
-      boxesContainer.innerHTML = '';
-    }
+  boxesContainer.appendChild(fragment);
+}
 
-    // Обробник події для кнопки Create
-    createButton.addEventListener('click', () => {
-      const amount = parseInt(input.value);
 
-      if (amount >= 1 && amount <= 100) {
-        createBoxes(amount);
-        input.value = '';
-      }
-    });
-
-    // Обробник події для кнопки Destroy
-    destroyButton.addEventListener('click', () => {
-      destroyBoxes();
-    });
+function destroyBoxes() {
+  boxesContainer.innerHTML = ""; 
+}

@@ -25,20 +25,20 @@ const images = [
   }
 ];
 
-// const gallery = document.querySelector(".gallery");
+const gallery = document.querySelector(".gallery");
 
-// const galleryItm = images
-//   .map(({ url, alt }) => {
-//     return `<li class="gallery-itm"><img src="${url}" alt="${alt}"></li>`;
-//   }).join("");
+const galleryItm = images
+  .map(({ url, alt }) => {
+    return `<li class="gallery-itm"><img src="${url}" alt="${alt}"></li>`;
+  }).join("");
 
-// gallery.insertAdjacentHTML("beforeend", galleryItm);
+gallery.insertAdjacentHTML("beforeend", galleryItm);
 
 
-    const gallery = document.querySelector('.gallery');
+    // const gallery = document.querySelector('.gallery');
 
-    const galleryItems = images.map(({ url, alt }) =>
-      `<li><img src="${url}" alt="${alt}"></li>`
-    ).join('');
+    // const galleryItems = images.map(({ url, alt }) =>
+    //   `<li><img src="${url}" alt="${alt}"></li>`
+    // ).join('');
 
-    gallery.insertAdjacentHTML('beforeend', galleryItems);
+    // gallery.insertAdjacentHTML('beforeend', galleryItems);
